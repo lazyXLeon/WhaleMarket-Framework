@@ -1,5 +1,5 @@
 #include "tools/hint.h"
-#include "tools/color.h"
+#include "../include/tools/color.h"
 #include <stdio.h>
 
 static const char* BANNER = "\

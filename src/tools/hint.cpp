@@ -1,5 +1,5 @@
 #include "tools/hint.h"
-#include "../include/tools/color.h"
+#include "tools/color.h"
 #include <stdio.h>
 
 static const char* BANNER = "\
@@ -20,6 +20,12 @@ static const char* INVALID = "\
 \t |_____| |_| |_|   \\_/    \\__,_| |_| |_|  \\__,_| (_)\n\
 ";
 
+static const char* SUCCESS = "\t\t*** Operation Successful! ***!";
+static const char* FAILURE = "\t\t*** Operation Failed! ***";
+static const char* ILLEGAL = "\t\t*** Illegal Input! ***";
+static const char* LOADING = "\t\t*** Loading ... Please Wait ... ***";
+static const char* EXITING = "\t\t*** Exiting ... ***";
+
 void welcomeMessage() {
     printf("\n%s%sWelcome to%s\n", BOLD, FRONT_RED, RESET);
     printf("%s%s%s%s\n", FRONT_BLUE, BOLD, BANNER, RESET);
@@ -32,3 +38,22 @@ void invalidMessage() {
 FRONT_RED, BOLD, RESET);
 }
 
+void successMessage() {
+    printf("\n%s%s%s\n\n", FRONT_GREEN, SUCCESS, RESET);
+}
+
+void failureMessage() {
+    printf("\n%s%s%s\n\n", FRONT_RED, FAILURE, RESET);
+}
+
+void illegalMessage() {
+    printf("\n%s%s%s\n\n", FRONT_RED, ILLEGAL, RESET);
+}
+
+void loadingMessage() {
+    printf("\n%s%s%s\n\n", FRONT_BLUE, LOADING, RESET);
+}
+
+void exitingMessage() {
+    printf("\n%s%s%s\n\n", FRONT_RED, EXITING, RESET);
+}

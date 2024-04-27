@@ -2,17 +2,17 @@
 
 static const string filePath = "src/data/id.txt";
 
-void getDate(string& dest){
+void getDate(char* dest){
     time_t rawtime;
     time (&rawtime);
     struct tm* timeinfo = localtime(&rawtime);
 
     stringstream ss;
     ss << timeinfo->tm_year + 1900 << "-" << timeinfo->tm_mon + 1 << "-" << timeinfo->tm_mday;
-    dest = ss.str();
+    strcpy(dest, ss.str().c_str());
 }
 
-void genID(string& dest, char type){
+void genID(char* dest, char type){
     int uid = 0, gid = 0, oid = 0; //分别对应user, good, order
 
     ifstream ifs(filePath);
@@ -37,5 +37,5 @@ void genID(string& dest, char type){
 
     stringstream ss;
     ss << type << setw(5) << setfill('0') << id;
-    dest = ss.str();
+    strcpy(dest, ss.str().c_str());
 }

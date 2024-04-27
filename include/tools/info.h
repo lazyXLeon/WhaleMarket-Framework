@@ -7,8 +7,17 @@
 #include <sstream>
 #include <time.h>
 #include <iomanip>
+#include <cstring>
 
 using namespace std;
+
+#define print_header \
+    cout << divide << endl; \
+    cout << header << endl; \
+    cout << divide << endl;
+
+#define print_divide \
+    cout << divide << endl;
 
 /**
  * @brief 获取当前日期
@@ -23,4 +32,4 @@ using namespace std;
  * @param dest 储存ID的目标字符串
  * @param type ID类型，U-用户，G-Good，O-订单
  */
- void genID(string& dest, char type);
+ void genID(char* dest, char type);

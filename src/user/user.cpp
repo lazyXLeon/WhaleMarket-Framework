@@ -120,6 +120,7 @@ static void printUser(int index) {
 
 void printUsers() {
     print_header
+    print_divide
     for (int i = 0; i < user_count; i++) {
         printUser(i);
         print_divide

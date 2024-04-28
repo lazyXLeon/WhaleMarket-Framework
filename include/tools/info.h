@@ -24,7 +24,7 @@ using namespace std;
  *
  * @param dest 储存日期的字符串
  */
- void getDate(string& dest);
+ void getDate(char* dest);
 
 /**
  * @brief 生成一个对应类型的ID
